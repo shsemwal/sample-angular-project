@@ -1,5 +1,5 @@
 <h2>Products</h2>
-<div *ngFor="let product of products">
+<div class="cart-item" *ngFor="let product of products">
 <a [title]="product.name+' details'"
 [routerLink]="['/products', product.id, product.name]">
 <!-- </a>*ngIf="product.id%2==1"> -->
@@ -9,7 +9,7 @@
     {{ product.id }}
 </p>
 <p *ngIf="product.description">
-    Description: {{ product.description }}
+    {{ product.description }}
 </p>
 <button (click)="share()">Share this product</button>
 <app-product-alerts [product]="product" (notify)="onNotify(product.price)"></app-product-alerts>

@@ -1,0 +1,16 @@
+<h2>Your Shopping Cart</h2>
+<div *ngIf="products.length>0 else emptyCart">
+    <div *ngFor="let product of products" class="cart-item">
+        <h3>{{product.name}}</h3><br>
+        <h4>{{product.price}}</h4><br>
+    </div>
+    <button [routerLink]="['/shipping']">
+        See shipping prices
+    </button>
+</div>
+<ng-template #emptyCart>
+    <div>
+        <h4>Oops! Your cart is empty, please add items to it.</h4>
+    </div>
+</ng-template>
+    

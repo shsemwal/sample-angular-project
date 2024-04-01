@@ -1,0 +1,13 @@
+<h2>Product Shipping</h2>
+<div *ngIf="items.length>0 else noItems">
+    <div *ngFor="let shippingCost of shippingCosts | async">
+        <div class="cart-item">
+            <h4>{{ shippingCost.type }}</h4>
+            <h4>{{ shippingCost.price | currency }}</h4>
+            <button (click)="saveSelection()">Select</button>
+        </div>
+    </div>
+</div>
+<ng-template #noItems>
+    <h3>Add Items to cart to see shipping prices</h3>
+</ng-template>
